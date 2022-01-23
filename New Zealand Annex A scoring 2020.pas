@@ -5,6 +5,7 @@ Program New_Zealand_Annex_A_scoring_2020;
 // Version 1.00, Date 01.07.2020
 // Author : R. Lyon - NZ Saiplane Racing Committee
 // IGC Scoring Script Annex A - Alternative Scoring
+// Forked From SeeYou Script ......
 //   . Minimum Y=Time for all classes = 2 Hours
 //   . Min Distance Novice Class = 80km (1000 pts) / 30km (Valid Day)
 //   . Min Distance Club Class = 200km / 80km
@@ -14,13 +15,22 @@ Program New_Zealand_Annex_A_scoring_2020;
 //************************************************************************************** 
 //************************************************************************************** 
 //
-// Forked From SeeYou Script ......
 // - Removed Obsolete variables Dt, n2, n4, Pdm, Pvm
 // - Added variables Spo, Spm, Sp, k, swap
 // - Re-used variables M - Median score Array
 //
 // Version 1.1, Date 01.12.2020
 // Bux fix for unrealistically large scores when Invalid Day
+// 
+//************************************************************************************** 
+//************************************************************************************** 
+//
+// Forked From SeeYou Script ......
+//
+// Version 1.2, Date 23.01.2022
+//  - Fixed Calc error in "S"   (Faulty code pushed to github)
+//  - Re-ordered Comments in script header
+//  - Changed "Novice" class name to "Sports"
 // 
 //**************************************************************************************
 // Version 8.00, Date 26.06.2019
@@ -137,7 +147,7 @@ begin
   // Minimum Distance to validate the Day, depending on the class [meters]
   Dm := 80000;
   if Task.ClassID = 'club' Then Dm := 50000;
-  if Task.ClassID = 'novice' Then Dm := 30000;
+  if Task.ClassID = 'sports' Then Dm := 30000;
   if Task.ClassID = 'racing' Then Dm := 80000;
   if Task.ClassID = 'open' Then Dm := 80000;
   if Task.ClassID = '2_seater' Then Dm := 80000;
@@ -147,7 +157,7 @@ begin
   // Minimum distance for 1000 points, depending on the class [meters]
   D1 := 200000;
   if Task.ClassID = 'club' Then D1 := 200000;
-  if Task.ClassID = 'novice' Then D1 := 80000;
+  if Task.ClassID = 'sports' Then D1 := 80000;
   if Task.ClassID = 'racing' Then D1 := 200000;
   if Task.ClassID = 'open' Then D1 := 200000;
   if Task.ClassID = '2_seater' Then D1 := 200000;
@@ -157,7 +167,7 @@ begin
   // Handicaps for club and 20m multi-seat class
   Auto_Hcaps_on := false;
   if Task.ClassID = 'club' Then Auto_Hcaps_on := true;
-  if Task.ClassID = 'novice' Then Auto_Hcaps_on := true;
+  if Task.ClassID = 'sports' Then Auto_Hcaps_on := true;
   if Task.ClassID = 'racing' Then Auto_Hcaps_on := true;
   if Task.ClassID = 'open' Then Auto_Hcaps_on := true;
 
@@ -360,9 +370,9 @@ begin
     Sp := Pilots[i].td1;
 
     If (n1/N) < 0.25 then
-    	S := 0;    
+    	S := 0    
     else
-        S := Sp * min( 1, 200/(Spo - Spm));S := 0;
+        S := Sp * min( 1, 200/(Spo - Spm));
 
     Pilots[i].Points := Round( S - Pilots[i].Penalty );
 
