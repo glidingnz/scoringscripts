@@ -25,12 +25,18 @@ Program New_Zealand_Annex_A_scoring_2020;
 //************************************************************************************** 
 //************************************************************************************** 
 //
-// Forked From SeeYou Script ......
 //
 // Version 1.2, Date 23.01.2022
 //  - Fixed Calc error in "S"   (Faulty code pushed to github)
 //  - Re-ordered Comments in script header
 //  - Changed "Novice" class name to "Sports"
+// 
+//************************************************************************************** 
+//************************************************************************************** 
+//
+//
+// Version 1.3, Date 24.01.2022
+//  - Re worked allocation of ClassID to ClassNames to match NZ classes.
 // 
 //**************************************************************************************
 // Version 8.00, Date 26.06.2019
@@ -70,7 +76,7 @@ Program New_Zealand_Annex_A_scoring_2020;
 // Version 3.20
 //   . added warnings when Exit 
 
-const UseHandicaps = 1;   // set to: 0 to disable handicapping, 1 to use handicaps, 2 is auto (handicaps only for club and multi-seat)
+const UseHandicaps = 2;   // set to: 0 to disable handicapping, 1 to use handicaps, 2 is auto (handicaps only for club and multi-seat)
 
 var
   Dm, D1,
@@ -146,30 +152,36 @@ begin
 
   // Minimum Distance to validate the Day, depending on the class [meters]
   Dm := 80000;
-  if Task.ClassID = 'club' Then Dm := 50000;
-  if Task.ClassID = 'sports' Then Dm := 30000;
-  if Task.ClassID = 'racing' Then Dm := 80000;
-  if Task.ClassID = 'open' Then Dm := 80000;
-  if Task.ClassID = '2_seater' Then Dm := 80000;
-  if Task.ClassID = '18_meter' Then Dm := 80000;
-  if Task.ClassID = 'open_unhandicapped' Then Dm := 80000;
+  if Task.ClassID = 'club' Then Dm := 50000;              // New Zealand Club Class
+  if Task.ClassID = '13_5_meter' Then Dm := 30000;        // New Zealand Sports (Novice) Class
+  if Task.ClassID = 'standard' Then Dm := 80000;          // New Zealand Racing Class
+  if Task.ClassID = '15_meter' Then Dm := 80000;          // New Zealand Unhandicapped Racing Class
+  if Task.ClassID = 'open' Then Dm := 80000;              // New Zealand Open Class
+  if Task.ClassID = 'double_seater' Then Dm := 80000;     // New Zealand Optional Class for 2 seaters
+  if Task.ClassID = '18_meter' Then Dm := 80000;          // New Zealand Unhandicapped 18 meter Class
+  if Task.ClassID = 'unknown' Then Dm := 80000;           // New Zealand Unhandicapped Open Class
   
   // Minimum distance for 1000 points, depending on the class [meters]
   D1 := 200000;
-  if Task.ClassID = 'club' Then D1 := 200000;
-  if Task.ClassID = 'sports' Then D1 := 80000;
-  if Task.ClassID = 'racing' Then D1 := 200000;
-  if Task.ClassID = 'open' Then D1 := 200000;
-  if Task.ClassID = '2_seater' Then D1 := 200000;
-  if Task.ClassID = '18_meter' Then D1 := 200000;
-  if Task.ClassID = 'open_unhandicapped' Then D1 := 200000;
+  if Task.ClassID = 'club' Then D1 := 200000;             // NZ Club Class
+  if Task.ClassID = '13_5_meter' Then D1 := 80000;        // NZ Novice Class
+  if Task.ClassID = 'standard' Then D1 := 200000;         // NZ Racing Class
+  if Task.ClassID = '15_meter' Then Dm := 200000;         // NZ Unhandicapped Racing Class
+  if Task.ClassID = 'open' Then D1 := 200000;             // NZ Open Class
+  if Task.ClassID = 'double_seater' Then D1 := 200000;    // NZ Optional 2 seat class
+  if Task.ClassID = '18_meter' Then D1 := 200000;         // NZ Unhandicapped 18 meter
+  if Task.ClassID = 'unknown' Then D1 := 200000;          // NZ Unhandicapped Open
 
   // Handicaps for club and 20m multi-seat class
   Auto_Hcaps_on := false;
   if Task.ClassID = 'club' Then Auto_Hcaps_on := true;
-  if Task.ClassID = 'sports' Then Auto_Hcaps_on := true;
-  if Task.ClassID = 'racing' Then Auto_Hcaps_on := true;
+  if Task.ClassID = '13_5_meter' Then Auto_Hcaps_on := true;
+  if Task.ClassID = 'standard' Then Auto_Hcaps_on := true;
   if Task.ClassID = 'open' Then Auto_Hcaps_on := true;
+  if Task.ClassID = 'double_seater' Then Auto_Hcaps_on := true;
+  //  18 meter unhandicapped
+  //  15 meter Unhandicapped
+  //  unknown unhandicapped
 
   // DESIGNATED START PROCEDURE
   // Read Gate Interval info from DayTag. Return zero if Intervals and NumIntervals are unparsable or missing
