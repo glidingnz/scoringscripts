@@ -5,6 +5,9 @@ For use with "SeeYou" Competition Scoring
 
 Provides the "Aternative" Scoring algorithm descibed in FAI Sporting Code for Gliders and Motor Gliders
 
+See the official guide   
+https://naviter.com/2019/06/scoring-scripts-github/
+
 
 IMPORTANT !!!!!!!!!!
 
