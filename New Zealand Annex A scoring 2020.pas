@@ -81,7 +81,7 @@ const UseHandicaps = 2;   // set to: 0 to disable handicapping, 1 to use handica
 var
   Dm, D1,
   n1, n3, N, D0, Vo, T0, Hmin,
-  Pm, Spo, Spm, Sp, Pn, F, Fcr, Day: Double;
+  Pm, Spo, Spm, Sp, SpD, Pn, F, Fcr, Day: Double;
 
   D, H, Dh, T, Dc, Pd, V, Vh, Pv, S : double;
   
@@ -372,19 +372,26 @@ begin
   else
     Spm:= ( M[trunc(k/2)] + M[trunc(k/2)+1] ) / 2;
 
-  // add 0.01 to avoid divide by zero error in final scores
-  Spm := Spm + 0.01;
+														   
+					
 
+  SpD := Spo - Spm;
+  
   //Final Scores
   for i:=0 to GetArrayLength(Pilots)-1 do
   begin
 
     Sp := Pilots[i].td1;
 
-    If (n1/N) < 0.25 then
-    	S := 0    
+    If ((n1/N) < 0.25) then
+    	S := 0
     else
-        S := Sp * min( 1, 200/(Spo - Spm));
+	begin
+		if (SpD = 0) then
+			S := Sp
+		else
+			S := Sp * min( 1, 200/SpD)
+	end
 
     Pilots[i].Points := Round( S - Pilots[i].Penalty );
 
