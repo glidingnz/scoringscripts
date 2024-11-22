@@ -166,7 +166,7 @@ begin
   if Task.ClassID = 'club' Then D1 := 200000;             // NZ Club Class
   if Task.ClassID = '13_5_meter' Then D1 := 80000;        // NZ Novice Class
   if Task.ClassID = 'standard' Then D1 := 200000;         // NZ Racing Class
-  if Task.ClassID = '15_meter' Then Dm := 200000;         // NZ Unhandicapped Racing Class
+  if Task.ClassID = '15_meter' Then D1 := 200000;         // NZ Unhandicapped Racing Class
   if Task.ClassID = 'open' Then D1 := 200000;             // NZ Open Class
   if Task.ClassID = 'double_seater' Then D1 := 200000;    // NZ Optional 2 seat class
   if Task.ClassID = '18_meter' Then D1 := 200000;         // NZ Unhandicapped 18 meter
@@ -383,7 +383,7 @@ begin
 
     Sp := Pilots[i].td1;
 
-    If ((n1/N) < 0.25) then
+    If ((n1/N) <= 0.25) then
     	S := 0
     else
 	begin
