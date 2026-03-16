@@ -1,0 +1,4 @@
+interface:
+  display_name: "SeeYou Scoring Scripts"
+  short_description: "Analyze and edit SeeYou Pascal scripts"
+  default_prompt: "Use $seeyou-scoring-scripts to analyze or modify a SeeYou competition scoring script."

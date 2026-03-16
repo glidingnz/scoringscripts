@@ -1,0 +1,4 @@
+interface:
+  display_name: "SeeYou Score Testbed"
+  short_description: "Design a test harness for SeeYou scripts"
+  default_prompt: "Use $seeyou-score-testbed to design a test harness for a SeeYou scoring script."
