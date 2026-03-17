@@ -1,7 +1,10 @@
-# scoringscripts
-Gliding NZ Scoring Scripts
+# GNZ Scoring Scripts
+### FOR SCORERS: ONLY DOWNLOAD "New Zealand Annex A scoring 2020.pas" 
+### THEN IMPORT THE SCRIPT TO SEEYOU AND SET UP CLASS NAMES
+---
 
-## FOR SCORERS: JUST DOWNLOAD "New Zealand Annex A scoring 2020.pas" IMPORT TO SEEYOU AND SET UP CLASS NAMES ##
+
+Gliding NZ Scoring Scripts
 
 For use with "SeeYou" Competition Scoring
 
@@ -27,9 +30,11 @@ When setting up the contest on SoaringSpot, Rename the existing SoaringSpot Cont
 'unknown'   =   'Open Unhandicapped'    //  Unofficial Class (unhandicapped)   
 'double_seater'  = '2 Seater'           //  Unofficial Class (uncandicapped)   
 
-## Local Test Harness (FreePascal + Node.js)
 
-## FOR SCORERS: IGNORE THIS. The Following is only for Testing By Developers !!! ##
+---
+## FOR SCORERS: IGNORE FROM HERE ONWARDS. The Following is only for Testing By Developers !!! 
+
+## Local Test Harness (FreePascal + Node.js
 
 This repo now includes a local scoring test harness to run the Pascal Script against fixture data.
 
