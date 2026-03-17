@@ -1,0 +1,147 @@
+﻿[
+  {
+    "id": "nz-annex-a-open-racing-001",
+    "description": "Invented open-class racing task with start intervals; includes finisher, non-finisher, HC pilot, and non-launch.",
+    "class_id": "open",
+    "day_tag": "Interval=10;NumIntervals=7",
+    "task": {
+      "total_dis_m": 200000,
+      "task_time_s": 0,
+      "no_start_before_s": 46800,
+      "points": [
+        { "lon": 175.67, "lat": -37.81, "d_m": 0, "crs_deg": 0 },
+        { "lon": 175.90, "lat": -37.95, "d_m": 85000, "crs_deg": 210 },
+        { "lon": 176.10, "lat": -38.05, "d_m": 115000, "crs_deg": 195 }
+      ]
+    },
+    "pilots": [
+      {
+        "comp_id": "A1",
+        "is_hc": false,
+        "hcap": 1.00,
+        "penalty": 0,
+        "takeoff_s": 45000,
+        "start_s": 47100,
+        "finish_s": 51300,
+        "dis_m": 200000,
+        "speed_ms": 47.619,
+        "sfinish_s": 51300
+      },
+      {
+        "comp_id": "B2",
+        "is_hc": false,
+        "hcap": 1.05,
+        "penalty": 0,
+        "takeoff_s": 45200,
+        "start_s": 47700,
+        "finish_s": 52200,
+        "dis_m": 190000,
+        "speed_ms": 42.222,
+        "sfinish_s": 52200
+      },
+      {
+        "comp_id": "C3",
+        "is_hc": false,
+        "hcap": 0.98,
+        "penalty": 50,
+        "takeoff_s": 45300,
+        "start_s": 46810,
+        "finish_s": 0,
+        "dis_m": 150000,
+        "speed_ms": 0,
+        "sfinish_s": 0
+      },
+      {
+        "comp_id": "D4",
+        "is_hc": true,
+        "hcap": 1.10,
+        "penalty": 0,
+        "takeoff_s": 45400,
+        "start_s": 48000,
+        "finish_s": 54000,
+        "dis_m": 210000,
+        "speed_ms": 35.000,
+        "sfinish_s": 54000
+      },
+      {
+        "comp_id": "E5",
+        "is_hc": false,
+        "hcap": 1.02,
+        "penalty": 0,
+        "takeoff_s": -1,
+        "start_s": 0,
+        "finish_s": 0,
+        "dis_m": 0,
+        "speed_ms": 0,
+        "sfinish_s": 0
+      }
+    ],
+    "expected": {
+      "points": {}
+    }
+  },
+  {
+    "id": "nz-annex-a-club-aat-002",
+    "description": "Invented club-class AAT with low completion ratio to trigger invalid day rule.",
+    "class_id": "club",
+    "day_tag": "",
+    "task": {
+      "total_dis_m": 220000,
+      "task_time_s": 7200,
+      "no_start_before_s": 46800
+    },
+    "pilots": [
+      {
+        "comp_id": "C1",
+        "is_hc": false,
+        "hcap": 1.03,
+        "penalty": 0,
+        "takeoff_s": 45000,
+        "start_s": 46830,
+        "finish_s": 54030,
+        "dis_m": 60000,
+        "speed_ms": 8.333,
+        "sfinish_s": 54030
+      },
+      {
+        "comp_id": "C2",
+        "is_hc": false,
+        "hcap": 0.99,
+        "penalty": 0,
+        "takeoff_s": 45100,
+        "start_s": 46860,
+        "finish_s": 0,
+        "dis_m": 30000,
+        "speed_ms": 0,
+        "sfinish_s": 0
+      },
+      {
+        "comp_id": "C3",
+        "is_hc": false,
+        "hcap": 1.05,
+        "penalty": 20,
+        "takeoff_s": 45200,
+        "start_s": 46920,
+        "finish_s": 0,
+        "dis_m": 25000,
+        "speed_ms": 0,
+        "sfinish_s": 0
+      },
+      {
+        "comp_id": "C4",
+        "is_hc": false,
+        "hcap": 1.01,
+        "penalty": 0,
+        "takeoff_s": 45300,
+        "start_s": 47000,
+        "finish_s": 0,
+        "dis_m": 20000,
+        "speed_ms": 0,
+        "sfinish_s": 0
+      }
+    ],
+    "expected": {
+      "points": {}
+    }
+  }
+]

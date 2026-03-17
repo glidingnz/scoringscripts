@@ -1,0 +1,19 @@
+# Build outputs
+/runner/bin/
+*.o
+*.ppu
+*.rsj
+
+# Vendored dependencies
+/runner/vendor/pascalscript/
+
+# Pascal/Lazarus tooling
+*.lps
+*.lpi
+*.lpr
+*.dcu
+*.dsk
+*.dproj.local
+
+# Node
+/node_modules/
