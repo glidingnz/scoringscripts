@@ -1,6 +1,8 @@
 # scoringscripts
 Gliding NZ Scoring Scripts
 
+## FOR SCORERS: JUST DOWNLOAD "New Zealand Annex A scoring 2020.pas" IMPORT TO SEEYOU AND SET UP CLASS NAMES ##
+
 For use with "SeeYou" Competition Scoring
 
 Provides the "Aternative" Scoring algorithm descibed in FAI Sporting Code for Gliders and Motor Gliders
@@ -26,6 +28,8 @@ When setting up the contest on SoaringSpot, Rename the existing SoaringSpot Cont
 'double_seater'  = '2 Seater'           //  Unofficial Class (uncandicapped)   
 
 ## Local Test Harness (FreePascal + Node.js)
+
+## FOR SCORERS: IGNORE THIS. The Following is only for Testing By Developers !!! ##
 
 This repo now includes a local scoring test harness to run the Pascal Script against fixture data.
 
